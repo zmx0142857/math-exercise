@@ -1,4 +1,5 @@
-tableOfContents = [ {
+var domain = '.mathExercise.io.github.zmx0142857';
+var tableOfContents = [ {
 	title:'高等代数',
 	articles: [
 		{title:'第0章 整数，数域与多项式', src:'algebra-ex/0.html'},
