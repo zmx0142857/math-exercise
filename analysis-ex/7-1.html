@@ -6,13 +6,12 @@
 <title>定积分的概念和基本性质</title>
 <meta charset="utf-8" />
 
-<link rel="stylesheet" type="text/css" href="../css/math.css" />
-<script src="../js/asciimathml.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/note.css" />
 
 </head>
 
 <body>
-<ol class="tree">
+<ol class="enum">
 <li>按以下步骤证明函数 f(x) = x 在任意区间 [a, b] 上黎曼可积且
 	`int_a^b x dx = 1/2(b^2 - a^2)`.
 	<ol>
@@ -35,7 +34,7 @@
 		`lim_(||Delta|| to 0)sum_(i=1)^n xi_i Delta x_i = 1/2(b^2-a^2)`.
 	</li>
 	</ol>
-	<ol class="prove">
+	<ol class="proof">
 	<li>对任意 `epsilon gt 0`, 取 `delta = epsilon/(b-a)`,
 		则当 `||Delta|| lt delta` 时,
 		<span class="formula">
@@ -109,7 +108,7 @@
 	</li>
 	</ol>
 	
-	<ol class="prove">
+	<ol class="proof">
 	<li>
 		<span class="formula">`{:
 		(,	sum_(i=1)^n x_i^2 Delta x_i - sum_(i=1)^n x_(i-1)^2 Delta x_i
@@ -184,7 +183,7 @@
 	</li>
 	</ol>
 
-	<ol class="prove">
+	<ol class="proof">
 	<li>
 		作 [a+c, b+c] 的任意分割 `Delta: a+c = x_0 lt x_1 lt cdots lt x_n
 		= b+c`, 并取相应的介点集 `Xi= {xi_1, xi_2, cdots, xi_n}`. 在 [a,b]
@@ -229,7 +228,8 @@
 	上任意有限个点处改变函数 f(x) 的值, 得到一个新的函数为 f*(x). 证明
 	f*(x) 也在 [a, b] 上可积, 且积分值仍为 `I`.
 
-	<p class="prove">
+	<br/>
+	<div class="proof">
 		作 [a, b] 的分割 `Delta: a = x_0 lt x_1 lt cdots lt x_n = b`,
 		并取相应介点集 `Xi = {xi_1, xi_2, cdots, xi_n}`.
 		设 `H = {eta_1, eta_2, cdots, eta_p}` 是 `Xi`
@@ -246,7 +246,7 @@
 		`||Delta|| lt delta` 时, 上式右端第二项小于 `epsilon`.
 		在上式两端令 `||Delta|| to 0`, 就得到 f*(x) 在 [a, b] 上可积,
 		且积分值仍为 `I`.
-	</p>
+	</div>
 </li>
 
 <li>
@@ -264,7 +264,7 @@
 	</li>
 	</ol>
 	
-	<ol class="prove">
+	<ol class="proof">
 	<li>由 `lim_(x to +oo) f(x) = c` 知对任意 `epsilon gt 0`, `EE X gt 0`,
 		当 x &gt; X 时,
 		<span class="formula">
@@ -285,7 +285,7 @@
 		):}`</span>
 		即所要证的极限成立.
 	</li>
-	<p class="note">用洛必达法则与定积分的求导法则立得结论.</p>
+	<p class="remark">用洛必达法则与定积分的求导法则立得结论.</p>
 	<li>设 a = nT + b, 其中 `n in NN`, `0 le b lt T`. 由第 6 题知
 		<span class="formula">`{:
 		(,		1/a int_0^a f(x) dx
@@ -333,7 +333,7 @@
 		le (int_a^b |f(x)|^2 dx) (int_a^b |g(x)|^2 dx)`.
 	</span>
 
-	<p class="prove">
+	<p class="proof">
 		设 `h(t) = t^2 int_a^b |f(x)|^2 dx - 2t int_a^b |f(x)g(x)|dx +
 		int_a^b |g(x)|^2 dx` `= int_a^b (t|f(x)| - |g(x)|)^2 dx ge 0`.
 		易知其判别式 `Delta le 0`, 即
@@ -370,7 +370,7 @@
 	</li>
 	</ol>
 
-	<ol class="prove">
+	<ol class="proof">
 		对任意 0 &lt; &delta; &lt; &pi;/2, 记 `sin(pi/2-delta) = r`.
 		我们有
 		<span class="formula">`{:
@@ -387,8 +387,9 @@
 	</ol>
 </li>
 </ol>
-</body>
 
-<script src="../js/main.js"></script>
+<script src="../js/note.js?type=math"></script>
+
+</body>
 
 </html>

@@ -6,8 +6,7 @@
 <title>实数的运算与序</title>
 <meta charset="utf-8" />
 
-<link rel="stylesheet" type="text/css" href="../css/math.css" />
-<script src="../js/asciimathml.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/note.css" />
 
 </head>
 
@@ -29,7 +28,7 @@
 	</li>
 </ol>
 
-<ol class="prove">
+<ol class="proof">
 	<li>若 `0 le b lt c`, 则 `|b| lt |c|`;
 		若 `a lt b lt 0`, 则 `|b| lt |a|`.
 		综上有 `|b| lt max{|a|, |c|}`.
@@ -77,10 +76,10 @@
 	<li>`[-2, 1]`;</li>
 	<li>`(-oo, -1/2] uu [5/4, +oo)`;</li>
 	<li>`(-1, 1)`;</li>
-	<li style="display: block">
-		`(-oo, (-1 - sqrt 13) / 2 ]
-		uu [(-1 - sqrt 5) / 2, (-1 + sqrt 5) / 2]
-		uu [(-1 + sqrt 13) / 2, +oo)`.
+	<li style="width: 100%">
+		`(-oo, (-1 - sqrt 13) / 2 ]`
+		`uu [(-1 - sqrt 5) / 2, (-1 + sqrt 5) / 2]`
+		`uu [(-1 + sqrt 13) / 2, +oo)`.
 	</li>
 </ol>
 </li>
@@ -94,7 +93,7 @@
 	</li>
 </ol>
 
-<ol class="prove">
+<ol class="proof">
 	<li>因为 `|x|-2 le ||x|-2| le 1`,
 		所以 `|x| + 1 le 4`.
 		又因为 `|x+1| le |x| + 1`, `|x-1| le |x| + 1`,
@@ -127,7 +126,7 @@
 	<li>`n! lt ((n+1)/2)^n`, n &ge; 2.</li>
 </ol>
 
-<ol class="prove">
+<ol class="proof">
 	<li>令 `f(t) = sum_(i=1)^n (x_i t + 1)^2`
 				`= t^2 sum_(i=1)^n x_i^2 + 2t sum_(i=1)^n x_i + n`,
 		显然有 `f(t) ge 0, AA t in RR`
@@ -208,7 +207,7 @@
 	</li>
 </ol>
 
-<ol class="prove">
+<ol class="proof">
 	<li><span class="formula">`{:(
 				sum_(k=1)^n 1/((2k-1)(2k+1))
 			,=	1/2 sum_(k=1)^n ( 1/(2k-1) - 1/(2k+1) )
@@ -261,34 +260,34 @@
 
 <li>设 m 和 n 都是正整数且 `m lt n`.
 	证明: 对任意实数 `x gt -1`, `x != 0` 成立
-	<div class="formula">
+	<span class="formula">
 		`(1 + x)^(m/n) lt 1 + m/n x`.
-	</div>
+	</span>
 
-	<p class="prove">由均值不等式,
-		<div class="formula">
+	<div class="proof">由均值不等式,
+		<span class="formula">
 			`	root(n)((1+x)^m)
 			lt	1/n [m(1+x) + (n-m)]
 			=	1 + m/n x.`
-		</div>
-	</p>
+		</span>
+	</div>
 </li>
 
 <li>已知 `(12/11)^10 ~~ 2.3872`.
-	证明: 当 `n ge 11` 时, `(1 + 1/n)^n lt 3 (1 - 1/n)`.
-	<p class="prove">
+	证明: 当 `n ge 11` 时, `(1 + 1/n)^n lt 3 (1 - 1/n)`.<br/>
+	<div class="proof">
 		容易验证 n = 7 时不等式成立.
 		下证 `(1+1/n)^n/(1-1/n)` 单调减, 即证
 		<span class="formula">
 			`(1+1/(n+1))^(n+1)/(1-1/(n+1)) lt (1+1/n)^n/(1-1/n)`,
 			`quad n = 2, 3, cdots`.
 		</span>
-	</p>
+	</div>
 </li>
 </ol>
 
-</body>
+<script src="../js/note.js?type=math"></script>
 
-<script src="../js/main.js"></script>
+</body>
 
 </html>

@@ -6,19 +6,18 @@
 <title>映射与基数</title>
 <meta charset="utf-8" />
 
-<link rel="stylesheet" type="text/css" href="../css/math.css" />
-<script src="../js/asciimathml.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/note.css" />
 
 </head>
 
 <body>
 
-<ol class="tree">
+<ol class="enum">
 <li>设 `f: RR to RR`, 记 `f_1(x) = f(x)`, `f_n(x) = f(f_(n-1)(x))` (`n = 2
 	, 3, cdots`). 若存在 `n_0`, 使得 `f_(n_0)(x) = x`, 则 `f` 是 `RR` 到
-	`f(RR)` 上的一一映射.
-
-	<p class="prove">
+	`f(RR)` 上的一一映射.<br/>
+	<div class="proof">
+	<p>
 		`n_0 = 1` 时结论显然, 下面设 `n_0 gt 1`.
 	</p>
 	<p> 设 `f(x_1) = f(x_2)`, 则 `x_1 = f_(n_0)(x_1)` `=
@@ -26,6 +25,7 @@
 		所以 f 为单射. f 当然是 `RR` 到其象 `f(RR)` 上的满射,
 		从而是一一映射.
 	</p>
+	</div>
 </li>
 
 <li>不存在 `RR` 上的连续函数 `f`, 它在无理数集 `RR \\ QQ` 上是一一映射,
@@ -37,7 +37,7 @@
 		`f(f^-1(B)) = B`.
 	</span>
 
-	<p class="prove">
+	<p class="proof">
 		由
 		<span class="formula">`{:
 		(,		f(f^-1(B))
@@ -60,39 +60,41 @@
 		<li>对任意的 `A sube B sube X`, 有 `f(B\\A) = f(B) \\ f(A)`.</li>
 	</ol>
 
-	<p class="prove">(1) &rArr; (2): 由定义易知
-		f(A &cap; B) &sube; f(A) &cap; f(B),
-		下证 f(A) &cap; f(B) &sube; f(A &cap; B).
-		取 y &isin; f(A) &cap; f(B),
-		由 f 为一满射知, &exist; x &isin; X, f(x) = y.
-		而由 y &isin; f(A) 知, &exist; x' &isin; A, f(x') = y.
-		再由 f 为一单射知 x = x',
-		所以 x &isin; A. 同理 x &isin; B, 即 x &isin; A &cap; B.
-		所以 y = f(x) &isin; f(A &cap; B). 得证.
-	</p>
-	<p>(2) &rArr; (3): f(A) &cap; f(B) = f(A &cap; B) = f(&empty;) =
-		&empty;.
-	</p>
-	<p>(3) &rArr; (4): 由定义易知
-		f(B) \ f(A) &sube; f(B\A), 下证 f(B\A) &sube; f(B) \ f(A).
-		取 y &isin; f(B\A), 则 &exist; x &isin; B\A, f(x) = y,
-		所以 y = f(x) &isin; f(B).
-		另一方面, 由 A &cap; (B\A) = &empty; 知
-		f(A) &cap; f(B\A) = &empty;,
-		所以 y &notin; f(A), 即 y &isin; f(B) \ f(A).
-	</p>
-	<p>(4) &rArr; (1): 只需证 f 是单射.
-		任取 `x_1, x_2 in X`, `x_1 != x_2`.
-		令 `A = {x_1}`, `B = {x_1, x_2}`, 则 A &sube; B &sube; X.
-		由 (3) 有 `{f(x_2)} = {f(x_1), f(x_2)} \\ {f(x_1)}`.
-		这推出 `f(x_1) != f(x_2)`.
-	</p>
+	<ol class="proof">
+		<li>&rArr; (2): 由定义易知
+			f(A &cap; B) &sube; f(A) &cap; f(B),
+			下证 f(A) &cap; f(B) &sube; f(A &cap; B).
+			取 y &isin; f(A) &cap; f(B),
+			由 f 为一满射知, &exist; x &isin; X, f(x) = y.
+			而由 y &isin; f(A) 知, &exist; x' &isin; A, f(x') = y.
+			再由 f 为一单射知 x = x',
+			所以 x &isin; A. 同理 x &isin; B, 即 x &isin; A &cap; B.
+			所以 y = f(x) &isin; f(A &cap; B). 得证.
+		</li>
+		<li>&rArr; (3): f(A) &cap; f(B) = f(A &cap; B) = f(&empty;) =
+			&empty;.
+		</li>
+		<li>&rArr; (4): 由定义易知
+			f(B) \ f(A) &sube; f(B\A), 下证 f(B\A) &sube; f(B) \ f(A).
+			取 y &isin; f(B\A), 则 &exist; x &isin; B\A, f(x) = y,
+			所以 y = f(x) &isin; f(B).
+			另一方面, 由 A &cap; (B\A) = &empty; 知
+			f(A) &cap; f(B\A) = &empty;,
+			所以 y &notin; f(A), 即 y &isin; f(B) \ f(A).
+		</li>
+		<li>&rArr; (1): 只需证 f 是单射.
+			任取 `x_1, x_2 in X`, `x_1 != x_2`.
+			令 `A = {x_1}`, `B = {x_1, x_2}`, 则 A &sube; B &sube; X.
+			由 (3) 有 `{f(x_2)} = {f(x_1), f(x_2)} \\ {f(x_1)}`.
+			这推出 `f(x_1) != f(x_2)`.
+		</li>
+	</ol>
 </li>
 
 <li>设 `f: X to Y`, `g: Y to X`. 若对任意的 `x in X`, 必有 `g(f(x)) = x`,
-	则 f 是单射, g 是满射.
+	则 f 是单射, g 是满射.<br/>
 
-	<p class="prove">
+	<div class="proof">
 		设 a, b &isin; X 满足 f(a) = f(b), 则
 		<span class="formula">
 			a = g(f(a)) = g(f(b)) = b.
@@ -100,11 +102,11 @@
 		故 f 是单射.
 		因为对 &forall; x &isin; X, &exist; f(x) &isin; Y, 使
 		g(f(x)) = x, 所以 g 是满射.
-	</p>
+	</div>
 </li>
 </ol>
 
-<ol class="tree">
+<ol class="enum">
 <li>设 `A_1 sube A_2`, `B_1 sube B_2`. 若 `A_1 ~ B_1`, `A_2 ~ B_2`, 试问:
 	是否有 `(A_2 \\ A_1) ~ (B_2 \\ B_1)`?
 </li>	
@@ -161,8 +163,8 @@
 </li>
 </ol>
 
-</body>
+<script src="../js/note.js?type=math"></script>
 
-<script src="../js/main.js"></script>
+</body>
 
 </html>

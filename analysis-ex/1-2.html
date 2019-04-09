@@ -6,8 +6,7 @@
 <title>实数域的完备性</title>
 <meta charset="utf-8" />
 
-<link rel="stylesheet" type="text/css" href="../css/math.css" />
-<script src="../js/asciimathml.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/note.css" />
 
 </head>
 
@@ -20,7 +19,7 @@
 		<li>`max{a, b} = (a+b)/2 + |a-b|/2`;</li>
 		<li>`min{a, b} = (a+b)/2 - |a-b|/2`.</li>
 	</ol>
-	<ol class="prove">
+	<ol class="proof">
 		易知
 		<span class="formula">`max{a,b} + min{a,b} = a + b`;</span>
 		<span class="formula">`max{a,b} - min{a,b} = |a - b|`;</span>
@@ -29,13 +28,13 @@
 </li>
 
 <li>证明: 对任意实数 a, b 都成立不等式
-	`max{|a-b|, |1-a|, |1+b|} ge 2/3`.
-	<p class="prove">
+	`max{|a-b|, |1-a|, |1+b|} ge 2/3`.<br/>
+	<div class="proof">
 		`|a-b| ge 2/3` 或 `|1-a| ge 2/3` 时不等式成立.
 		现设 `|a-b| lt 2/3`, `|1-a| lt 2/3`.
 		则由 `|a-b| + |1-a| + |1+b|` `ge |(a-b) + (1-a) + (1+b)| = 2`
 		知 `|1+b| ge 2 - |a-b| - |1-a| gt 2 - 2/3 - 2/3 = 2/3`.
-	</p>
+	</div>
 </li>
 
 <li>设 `a_k, b_k in RR` 且 `b_k gt 0`, `k = 1, 2, cdots, n`.
@@ -46,7 +45,7 @@
 		`le max S`.
 	</span>
 
-	<ol class="prove">
+	<ol class="proof">
 		此题是对习题 1.1 第 1(2) 题的推广.
 		记 `sum_(k=1)^n a_k = A`, `sum_(k=1)^n b_k = B`.
 		<li>
@@ -75,20 +74,20 @@
 
 <li>设 (A, B) 是实数系的一个戴德金分划.
 	证明: 不可能出现既在下类 A 中有最大数,
-	又在上类 B 中有最小数的情况.
-	<p class="prove">
+	又在上类 B 中有最小数的情况.<br/>
+	<div class="proof">
 		设下类 A 中有最大数 a, 上类 B 中有最小数 b,
 		则 a &lt; b,
 		但 `a lt (a+b)/2 lt b`,
 		所以 `(a+b)/2 !in A`, `(a+b)/2 !in B`,
 		与 `A uu B = RR` 矛盾.
-	</p>
+	</div>
 </li>
 
 <li>设 (A, B) 是实数系的一个戴德金分划.
 	证明: 满足条件 `x le c le y`, `AA x in A, AA y in B`
-	的实数 c (即分点) 唯一.
-	<p class="prove">
+	的实数 c (即分点) 唯一.<br/>
+	<div class="proof">
 		不妨设存在实数 `c_1 le c_2`
 		满足 `x le c_1 le y` 和 `x le c_2 le y`,
 		`AA x in A`, `AA y in B`.
@@ -99,47 +98,45 @@
 		所以 `c !in A`, `c !in B`,
 		与 `A uu B = RR` 矛盾.
 		所以 `c_1 = c_2`.
-	</p>
+	</div>
 </li>
 
 <li>令 `A = {x: x in QQ^+, x^2 lt 2}`.
-	证明: `"sup" A = sqrt 2`.
-	<div class="prove">
-	<p> (参考 1.3 节的定理 1.3.1)
+	证明: `"sup" A = sqrt 2`.<br/>
+	<ol class="proof">
+		(参考 1.3 节的定理 1.3.1)
 		容易验证 `1 in A`, 所以 A 非空.
 		由 `x^2 lt 2`, `AA x in A` 知 `sqrt 2` 是 A 的上界.
 		由确界原理知, A 有上确界. 设 `x = "sup" A`, 
 		下面我们证明 `x = sqrt 2`, 这只需证明 `x lt sqrt 2`
 		与 `x gt sqrt 2` 都不可能.
-	</p>
-	<p>	假如 `x lt sqrt 2`, 即 `x^2 lt 2`,
-		令 `epsi_1= min{1, (2 - x^2) / (2(x+1))} gt 0`,
-		再从开区间 `(x, x+epsi_1)` 中取一有理数 `y`, 则
-		<span class="formula">
-			`  y^2 - x^2
-			lt (x+epsi_1)^2 - x^2
-			=  epsi_1 (2x+epsi_1)
-			lt 2epsi_1 (x + epsi_1)
-			lt 2 - x^2`.
-		</span>
-		从而 `y^2 lt 2`, 因此 `y in A`, 与 `x = "sup" A` 矛盾.
-	</p>
-	<p>	假如 `x gt sqrt 2`, 即 `x^2 gt 2`, 令 `epsi_2 = (x^2 - 2)/(2x)`,
-		则 `0 lt epsi_2 lt x`.
-		若有某个 `y in A` 使 `y ge x - epsi_2`, 则
-		<span class="formula">
-			`  x^2 - y^2
-			le x^2 - (x-epsi_2)^2
-			lt 2 epsi_2 x
-			=  x^2 - 2`.
-		</span>
-		由此得 `y^2 gt 2`, `y !in A`, 矛盾.
-		所以 `y lt x - epsi_2`, `AA y in A`,
-		而这与 `x = "sup" A` 矛盾.
-	</p>
-	<p>	综上, `"sup" A = sqrt 2`.
-	</p>
-	</div>
+		<li>假如 `x lt sqrt 2`, 即 `x^2 lt 2`,
+			令 `epsi_1= min{1, (2 - x^2) / (2(x+1))} gt 0`,
+			再从开区间 `(x, x+epsi_1)` 中取一有理数 `y`, 则
+			<span class="formula">
+				`  y^2 - x^2
+				lt (x+epsi_1)^2 - x^2
+				=  epsi_1 (2x+epsi_1)
+				lt 2epsi_1 (x + epsi_1)
+				lt 2 - x^2`.
+			</span>
+			从而 `y^2 lt 2`, 因此 `y in A`, 与 `x = "sup" A` 矛盾.
+		</li>
+		<li>假如 `x gt sqrt 2`, 即 `x^2 gt 2`,
+			令 `epsi_2 = (x^2 - 2)/(2x)`, 则 `0 lt epsi_2 lt x`.
+			若有某个 `y in A` 使 `y ge x - epsi_2`, 则
+			<span class="formula">
+				`  x^2 - y^2
+				le x^2 - (x-epsi_2)^2
+				lt 2 epsi_2 x
+				=  x^2 - 2`.
+			</span>
+			由此得 `y^2 gt 2`, `y !in A`, 矛盾.
+			所以 `y lt x - epsi_2`, `AA y in A`,
+			而这与 `x = "sup" A` 矛盾.
+		</li>
+		`"sup" A = sqrt 2`.
+	</ol>
 </li>
 
 <li>设 A, B 是两个非空且有界的实数集.
@@ -170,7 +167,7 @@
 			</span>
 		</li>
 	</ol>
-	<ol class="prove subenum">
+	<ol class="proof subenum">
 		<li>记 `a = "sup" A`, 则
 			<ol>
 				<li>`x le a`, `AA x in A`;</li>
@@ -226,40 +223,37 @@
 	</ol>
 </li>
 
-<li>应用确界原理证明戴德金原理.
-	<div class="prove">
-	<p>
+<li>应用确界原理证明戴德金原理.<br/>
+	<ol class="proof">
 		设 (A,B) 是实数域的一个戴德金分划,
 		则由 "`A != O/`, `B != O/`" 
 		和 "对 `AA x in A, AA y in B` 都成立 `x lt y`"
 		知 A 非空有上界 (B 中任一数都是 A 的上界).
 		应用确界原理知, sup A 存在.
-	</p>
-	<p>当 sup A `in` A, 成立
-		<span class="formula">
-			`x le "sup" A lt y`, `AA x in A, AA y in B`.
-		</span>
-	</p>
-	<p>当 sup A `!in` A, 则 sup A `in` B.
-		由于 `AA y in B` 是 A 的上界,
-		而 sup A 是 A 的所有上界的最小者, 因此成立
-		<span class="formula">
-			`x lt "sup" A le y`, `AA x in A, AA y in B`.
-		</span>
-	</p>
-	<p>综合以上两式有: `EE c in RR`,
+		<li>当 sup A `in` A, 成立
+			<span class="formula">
+				`x le "sup" A lt y`, `AA x in A, AA y in B`.
+			</span>
+		</li>
+		<li>当 sup A `!in` A, 则 sup A `in` B.
+			由于 `AA y in B` 是 A 的上界,
+			而 sup A 是 A 的所有上界的最小者, 因此成立
+			<span class="formula">
+				`x lt "sup" A le y`, `AA x in A, AA y in B`.
+			</span>
+		</li>
+		综合以上两式有: `EE c in RR`,
 		<span class="formula">
 			`x le c le y`, `AA x in A, AA y in B`.
 		</span>
 		这就证明了戴德金原理的表述二.
-	</p>
-	</div>
+	</ol>
 </li>
 </ol>
 
-</body>
+<script src="../js/note.js?type=math"></script>
 
-<script src="../js/main.js"></script>
+</body>
 
 </html>
 

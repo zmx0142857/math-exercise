@@ -48,7 +48,7 @@ var alertIfNoMathML = false;   // show alert box if no MathML capability
 var translateOnLoad = true;    // set to false to do call translators from js 
 var translateASCIIMath = true; // false to preserve `..`
 var displaystyle = true;      // puts limits above and below large operators
-var showasciiformulaonhover = true; // helps students learn ASCIIMath
+var showasciiformulaonhover = false; // helps students learn ASCIIMath
 var decimalsign = ".";        // change to "," if you like, beware of `(1,2)`!
 var AMdelimiter1 = "`", AMescape1 = "\\\\`"; // can use other characters
 var AMdocumentId = "wikitext" // PmWiki element containing math (default=body)
@@ -254,6 +254,62 @@ var AMsymbols = [
 {input:"Xi",     tag:"mo", output:"\u039E", tex:null, ttype:CONST},
 {input:"zeta",   tag:"mi", output:"\u03B6", tex:null, ttype:CONST},
 
+/* script symbols
+{input:"scA",	tag:"mo", output:"\u1D49C", tex:null, ttype:CONST},
+{input:"scB",	tag:"mo", output:"\u1D49D", tex:null, ttype:CONST},
+{input:"scC",	tag:"mo", output:"\u1D49E", tex:null, ttype:CONST},
+{input:"scD",	tag:"mo", output:"\u1D49F", tex:null, ttype:CONST},
+{input:"scE",	tag:"mo", output:"\u1D4A0", tex:null, ttype:CONST},
+{input:"scF",	tag:"mo", output:"\u1D4A1", tex:null, ttype:CONST},
+{input:"scG",	tag:"mo", output:"\u1D4A2", tex:null, ttype:CONST},
+{input:"scH",	tag:"mo", output:"\u1D4A3", tex:null, ttype:CONST},
+{input:"scI",	tag:"mo", output:"\u1D4A4", tex:null, ttype:CONST},
+{input:"scJ",	tag:"mo", output:"\u1D4A5", tex:null, ttype:CONST},
+{input:"scK",	tag:"mo", output:"\u1D4A6", tex:null, ttype:CONST},
+{input:"scL",	tag:"mo", output:"\u1D4A7", tex:null, ttype:CONST},
+{input:"scM",	tag:"mo", output:"\u1D4A8", tex:null, ttype:CONST},
+{input:"scN",	tag:"mo", output:"\u1D4A9", tex:null, ttype:CONST},
+{input:"scO",	tag:"mo", output:"\u1D4AA", tex:null, ttype:CONST},
+{input:"scP",	tag:"mo", output:"&#x1D4AB;", tex:null, ttype:CONST},
+{input:"scQ",	tag:"mo", output:"\u1D4AC", tex:null, ttype:CONST},
+{input:"scR",	tag:"mo", output:"\u1D4AD", tex:null, ttype:CONST},
+{input:"scS",	tag:"mo", output:"\u1D4AE", tex:null, ttype:CONST},
+{input:"scT",	tag:"mo", output:"\u1D4AF", tex:null, ttype:CONST},
+{input:"scU",	tag:"mo", output:"\u1D4B0", tex:null, ttype:CONST},
+{input:"scV",	tag:"mo", output:"\u1D4B1", tex:null, ttype:CONST},
+{input:"scW",	tag:"mo", output:"\u1D4B2", tex:null, ttype:CONST},
+{input:"scX",	tag:"mo", output:"\u1D4B3", tex:null, ttype:CONST},
+{input:"scY",	tag:"mo", output:"\u1D4B4", tex:null, ttype:CONST},
+{input:"scZ",	tag:"mo", output:"\u1D4B5", tex:null, ttype:CONST},
+
+{input:"sca",	tag:"mi", output:"\u1D4B6", tex:null, ttype:CONST},
+{input:"scb",	tag:"mi", output:"\u1D4B7", tex:null, ttype:CONST},
+{input:"scc",	tag:"mi", output:"\u1D4B8", tex:null, ttype:CONST},
+{input:"scd",	tag:"mi", output:"\u1D4B9", tex:null, ttype:CONST},
+{input:"sce",	tag:"mi", output:"\u1D4BA", tex:null, ttype:CONST},
+{input:"scf",	tag:"mi", output:"\u1D4BB", tex:null, ttype:CONST},
+{input:"scg",	tag:"mi", output:"\u1D4BC", tex:null, ttype:CONST},
+{input:"sch",	tag:"mi", output:"\u1D4BD", tex:null, ttype:CONST},
+{input:"sci",	tag:"mi", output:"\u1D4BE", tex:null, ttype:CONST},
+{input:"scj",	tag:"mi", output:"\u1D4BF", tex:null, ttype:CONST},
+{input:"sck",	tag:"mi", output:"\u1D4C0", tex:null, ttype:CONST},
+{input:"scl",	tag:"mi", output:"\u1D4C1", tex:null, ttype:CONST},
+{input:"scm",	tag:"mi", output:"\u1D4C2", tex:null, ttype:CONST},
+{input:"scn",	tag:"mi", output:"\u1D4C3", tex:null, ttype:CONST},
+{input:"sco",	tag:"mi", output:"\u1D4C4", tex:null, ttype:CONST},
+{input:"scp",	tag:"mi", output:"\u1D4C5", tex:null, ttype:CONST},
+{input:"scq",	tag:"mi", output:"\u1D4C6", tex:null, ttype:CONST},
+{input:"scr",	tag:"mi", output:"\u1D4C7", tex:null, ttype:CONST},
+{input:"scs",	tag:"mi", output:"\u1D4C8", tex:null, ttype:CONST},
+{input:"sct",	tag:"mi", output:"\u1D4C9", tex:null, ttype:CONST},
+{input:"scu",	tag:"mi", output:"\u1D4CA", tex:null, ttype:CONST},
+{input:"scv",	tag:"mi", output:"\u1D4CB", tex:null, ttype:CONST},
+{input:"scw",	tag:"mi", output:"\u1D4CC", tex:null, ttype:CONST},
+{input:"scx",	tag:"mi", output:"\u1D4CD", tex:null, ttype:CONST},
+{input:"scy",	tag:"mi", output:"\u1D4CE", tex:null, ttype:CONST},
+{input:"scz",	tag:"mi", output:"\u1D4CF", tex:null, ttype:CONST},
+*/
+
 //binary operation symbols
 //{input:"-",  tag:"mo", output:"\u0096", tex:null, ttype:CONST},
 {input:"*",  tag:"mo", output:"\u22C5", tex:"cdot", ttype:CONST},
@@ -284,7 +340,6 @@ var AMsymbols = [
 {input:"uuu", tag:"mo", output:"\u22C3", tex:"bigcup", ttype:UNDEROVER},
 
 //binary relation symbols
-{input:"==",  tag:"mo", output:"\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550", tex:null, ttype:CONST},
 {input:"!=",  tag:"mo", output:"\u2260", tex:"ne", ttype:CONST},
 {input:":=",  tag:"mo", output:":=",     tex:null, ttype:CONST},
 {input:"lt",  tag:"mo", output:"<",      tex:null, ttype:CONST},
@@ -305,10 +360,21 @@ var AMsymbols = [
 {input:"sube", tag:"mo", output:"\u2286", tex:"subseteq", ttype:CONST},
 {input:"supe", tag:"mo", output:"\u2287", tex:"supseteq", ttype:CONST},
 {input:"-=",  tag:"mo", output:"\u2261", tex:"equiv", ttype:CONST},
-{input:"!-=",  tag:"mo", output:"\u2262", tex:null, ttype:CONST},
 {input:"~=",  tag:"mo", output:"\u2245", tex:"cong", ttype:CONST},
 {input:"~~",  tag:"mo", output:"\u2248", tex:"approx", ttype:CONST},
 {input:"prop", tag:"mo", output:"\u221D", tex:"propto", ttype:CONST},
+
+{input:"==",  tag:"mo", output:"\u2550\u2550\u2550\u2550", tex:null, ttype:CONST},
+{input:"====",  tag:"mo", output:"\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550", tex:null, ttype:CONST},
+{input:"////", tag:"mo", output:"\u2225", tex:null, ttype:CONST},
+{input:"!//", tag:"mo", output:"\u2226", tex:null, ttype:CONST},
+{input:"S=",  tag:"mo", output:"\u224C", tex:null, ttype:CONST},
+{input:"!-=",  tag:"mo", output:"\u2262", tex:null, ttype:CONST},
+{input:"!|", tag:"mo", output:"\u2224", tex:null, ttype:CONST},
+{input:"!sube", tag:"mo", output:"\u2288", tex:null, ttype:CONST},
+{input:"!supe", tag:"mo", output:"\u2289", tex:null, ttype:CONST},
+{input:"subne", tag:"mo", output:"\u228A", tex:null, ttype:CONST},
+{input:"supne", tag:"mo", output:"\u228B", tex:null, ttype:CONST},
 
 //logical symbols
 {input:"and", tag:"mtext", output:"and", tex:null, ttype:SPACE},
@@ -342,18 +408,13 @@ var AMsymbols = [
 
 //miscellaneous symbols
 {input:"int",  tag:"mo", output:"\u222B", tex:null, ttype:CONST},
-{input:"iint",  tag:"mo", output:"\u222C", tex:null, ttype:CONST},
-{input:"iiint",  tag:"mo", output:"\u222D", tex:null, ttype:CONST},
 {input:"dx",  tag:"mi", output:"{:\"d\" x:}", tex:null, ttype:DEFINITION},
 {input:"dy",  tag:"mi", output:"{:\"d\" y:}", tex:null, ttype:DEFINITION},
 {input:"dz",  tag:"mi", output:"{:\"d\" z:}", tex:null, ttype:DEFINITION},
 {input:"dt",  tag:"mi", output:"{:\"d\" t:}", tex:null, ttype:DEFINITION},
 {input:"oint", tag:"mo", output:"\u222E", tex:null, ttype:CONST},
-{input:"oiint", tag:"mo", output:"\u222F", tex:null, ttype:CONST},
-{input:"oiiint", tag:"mo", output:"\u2230", tex:null, ttype:CONST},
 {input:"del",  tag:"mo", output:"\u2202", tex:"partial", ttype:CONST},
 {input:"grad", tag:"mo", output:"\u2207", tex:"nabla", ttype:CONST},
-{input:"laplace",  tag:"mo", output:"\u0394", tex:null, ttype:CONST},
 {input:"+-",   tag:"mo", output:"\u00B1", tex:"pm", ttype:CONST},
 {input:"O/",   tag:"mo", output:"\u2205", tex:"emptyset", ttype:CONST},
 {input:"oo",   tag:"mo", output:"\u221E", tex:"infty", ttype:CONST},
@@ -386,11 +447,14 @@ var AMsymbols = [
 {input:"f",   tag:"mi", output:"f",      tex:null, ttype:UNARY, func:true},
 {input:"g",   tag:"mi", output:"g",      tex:null, ttype:UNARY, func:true},
 
+{input:"iint",  tag:"mo", output:"\u222C", tex:null, ttype:CONST},
+{input:"iiint",  tag:"mo", output:"\u222D", tex:null, ttype:CONST},
+{input:"oiint", tag:"mo", output:"\u222F", tex:null, ttype:CONST},
+{input:"oiiint", tag:"mo", output:"\u2230", tex:null, ttype:CONST},
+{input:"laplace",  tag:"mo", output:"\u0394", tex:null, ttype:CONST},
+
 //standard functions
 {input:"lim",  tag:"mo", output:"lim", tex:null, ttype:UNDEROVER},
-{input:"Lim",  tag:"mo", output:"Lim", tex:null, ttype:UNDEROVER},
-{input:"Sup",  tag:"mo", output:"sup", tex:null, ttype:UNDEROVER},
-{input:"inf",  tag:"mo", output:"inf", tex:null, ttype:UNDEROVER},
 {input:"sin",  tag:"mo", output:"sin", tex:null, ttype:UNARY, func:true},
 {input:"cos",  tag:"mo", output:"cos", tex:null, ttype:UNARY, func:true},
 {input:"tan",  tag:"mo", output:"tan", tex:null, ttype:UNARY, func:true},
@@ -422,6 +486,9 @@ var AMsymbols = [
 {input:"glb",  tag:"mo", output:"glb", tex:null, ttype:CONST},
 {input:"min",  tag:"mo", output:"min", tex:null, ttype:UNDEROVER},
 {input:"max",  tag:"mo", output:"max", tex:null, ttype:UNDEROVER},
+
+{input:"Sup",  tag:"mo", output:"sup", tex:null, ttype:UNDEROVER},
+{input:"inf",  tag:"mo", output:"inf", tex:null, ttype:UNDEROVER},
 
 //arrows
 {input:"uarr", tag:"mo", output:"\u2191", tex:"uparrow", ttype:CONST},
@@ -472,8 +539,9 @@ AMquote,
 {input:"mathtt", tag:"mstyle", atname:"mathvariant", atval:"monospace", output:"mathtt", tex:null, ttype:UNARY},
 {input:"fr",  tag:"mstyle", atname:"mathvariant", atval:"fraktur", output:"fr", tex:null, ttype:UNARY, codes:AMfrk},
 {input:"mathfrak",  tag:"mstyle", atname:"mathvariant", atval:"fraktur", output:"mathfrak", tex:null, ttype:UNARY, codes:AMfrk},
+
 {input:"bm", tag:"mstyle", atname:"mathvariant", atval:"bold-italic", output:"bm", tex:null, ttype:UNARY},
-{input:"rm", tag:"mstyle", atname:"mathvariant", atval:"serif", output:"rm", tex:null, ttype:UNARY}
+{input:"rm", tag:"mstyle", atname:"mathvariant", atval:"serif", output:"rm", tex:null, ttype:UNARY},
 ];
 
 function compareNames(s1,s2) {

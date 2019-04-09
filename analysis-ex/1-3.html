@@ -6,8 +6,7 @@
 <title>初等函数</title>
 <meta charset="utf-8" />
 
-<link rel="stylesheet" type="text/css" href="../css/math.css" />
-<script src="../js/asciimathml.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/note.css" />
 
 </head>
 
@@ -15,17 +14,15 @@
 
 <ol class="enum">
 
-<li>证明定理 1.3.2 的结论 (1), (2), (3) 和 (5).
-	<div class="prove">
+<li>证明定理 1.3.2 的结论 (1), (2), (3) 和 (5).<br/>
+	<div class="proof">
 	先引入一些结论:
-	<p class="lemma">
+	<ol class="lemma">
 		对任意 `x, y in RR^+`, 我们有
-		<ol>
-			<li>`(x^(1/n))^n = x`;</li>
-			<li>`x^n = y^n iff x = y`;</li>
-			<li>`x^n lt y^n iff x lt y`.</li>
-		</ol>
-	</p>
+		<li>`(x^(1/n))^n = x`;</li>
+		<li>`x^n = y^n iff x = y`;</li>
+		<li>`x^n lt y^n iff x lt y`.</li>
+	</ol>
 	现在我们来完成证明:
 	<p>	(1) `a gt b` `iff (a^(1/n))^n gt (b^(1/n))^n`
 		`iff a^(1/n) gt b^(1/n)`.
@@ -44,8 +41,8 @@
 	</div>
 </li>
 
-<li>证明定理 1.3.4.
-	<ol class="prove">
+<li>证明定理 1.3.4.<br/>
+	<ol class="proof">
 		<li>`a gt 1, b gt 1` 时, 利用习题 1.2 7(3) 的结果有
 			` (ab)^c 
 			= underset(r in QQ nn (0,c]) "sup" (ab)^r
@@ -101,8 +98,8 @@
 
 <li>设 `a ge 0`. 证明: 对任意给定的实数 b, 方程 
 		`x^3 + ax = b` 
-	都有唯一的实数根. 
-	<div class="prove">
+	都有唯一的实数根. <br/>
+	<div class="proof">
 		<p>	唯一性: 设 `x^3 + ax = y^3 + ay = b`,
 			则 `(x-y)(x^2+xy+y^2+a) = 0`,
 			即 `(x-y)((x+y/2)^2 + 3/4 y^2 + a) = 0`.
@@ -128,8 +125,8 @@
 </li>
 
 <li>设 `A` 是非空且有上界的实数集, 而 `a gt 1`. 证明:
-	`"sup" {a^x: x in A} = a^("sup"A)`.
-	<p class="prove">
+	`"sup" {a^x: x in A} = a^("sup"A)`.<br/>
+	<p class="proof">
 		记 `a^A = {a^x: x in A}`. 任取 `a^x in a^A`, 其中 `x in A`,
 		则 `x le "sup" A`, 从而 `a^x le a^("sup"A)`. 这说明 `a^("sup"A)`
 		是 `a^A` 的一个上界. 下证它是 `a^A` 的最小上界. 事实上, 设 `M`
@@ -146,7 +143,7 @@
 		</span>
 		从而 `M lt a^(x_epsi) in a^A`, 矛盾.
 	</p>
-	<p class="note">
+	<p class="remark">
 		类似可证 `0 lt a lt 1` 时,
 		`"inf" {a^x: x in A} = a^("sup"A)`.
 	</p>
@@ -193,7 +190,8 @@
 		<p>`(cosh x +- sinh x)^n = cosh nx +- sinh nx`.</p>
 	</span>
 
-	<p class="prove">
+	<div class="proof">
+	<p>
 		` cosh^2 x - sinh^2 x
 		= ((e^x + e^(-x))/2)^2 - ((e^x - e^(-x))/2)^2
 		= 1`.
@@ -233,6 +231,7 @@
 		</span>
 		故此式对任意正整数 n 成立.
 	</p>
+	</div>
 </li>
 
 <li>求 `underbrace(f @ f @ cdots @ f)_(n 次)`, 已知
@@ -308,9 +307,9 @@
 
 </ol>
 
-</body>
+<script src="../js/note.js?type=math"></script>
 
-<script src="../js/main.js"></script>
+</body>
 
 </html>
 

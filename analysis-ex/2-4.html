@@ -6,8 +6,7 @@
 <title>几个重要的定理</title>
 <meta charset="utf-8" />
 
-<link rel="stylesheet" type="text/css" href="../css/math.css" />
-<script src="../js/asciimathml.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/note.css" />
 
 </head>
 
@@ -42,7 +41,7 @@
 	</li>
 </ol>
 
-<ol class="prove">
+<ol class="proof">
 	<li>归纳法可证 `x_n in [0, 2]`; 又 `x_(n+1) - x_n = 1/2 - x_n/4 ge 0`,
 		由单调有界原理, 极限存在. 在迭代格式两边取极限, 得 `x_n to 2`.
 	</li>
@@ -80,7 +79,8 @@
 <li>设 S 是非空有上界的实数集合, a 是 S 的上确界, 但 `a !in S`.
 	证明: 存在 S 中的单调递增数列 `{x_n}` 使 `lim_(n to oo) x_n = a`.
 
-	<p class="prove">
+	<br/>
+	<div class="proof">
 		由上确界定义, 对任意 `epsi gt 0`, 存在 `x in S`, 使得
 		<span class="formula">
 			`a - epsi lt x lt a`.
@@ -104,7 +104,7 @@
 			`|x_n - a| lt epsi_n le 2^-n`,
 		</span>
 		立即得到 `x_n to a`.
-	</p>
+	</div>
 </li>
 
 <li>
@@ -118,7 +118,7 @@
 	<li>求 `lim_(n to oo) ln(1/(n+1) + 1/(n+2) + cdots + 1/(2n))`.
 	</li>
 </ol>
-<ol class="prove">
+<ol class="proof">
 	<li>
 		只需证
 		<span class="formula">
@@ -154,7 +154,8 @@
 <li>证明: 数列 `x_n = 1/(1+1) + 1/(2+1/2) + cdots + 1/(n+1/n) 
 	- ln {:n/sqrt2:}` (`n = 1, 2, cdots`) 有位于区间 `[0, 1/2]` 的极限.
 
-	<p class="prove">
+	<br/>
+	<div class="proof">
 		`x_(n+1) - x_n = 1/(n+1+1/(n+1)) - ln(1+1/n) lt 1/(n+1) -
 		ln(1+1/n) lt 0`.
 		计算知 `x_3 lt 1/2`, 所以从第 3 项起, `1/2` 是数列的一个上界.
@@ -172,7 +173,7 @@
 		),( ,= 1/2 ln {:(n^2+1)/2:}
 		),( ,gt ln{:n/sqrt 2:}.
 		):}`</span>
-	</p>
+	</div>
 </li>
 
 <li>设 `0 lt x_1 lt y_1`, 且
@@ -180,17 +181,17 @@
 		`x_(n+1) = sqrt(x_n y_n)`, `y_(n+1) = 1/2 (x_n + y_n)`,
 		`n = 1, 2, cdots`.
 	</div>
-	证明: `{x_n}` 和 `{y_n}` 都有极限并且相等.
-	<p class="prove">
+	证明: `{x_n}` 和 `{y_n}` 都有极限并且相等.<br/>
+	<div class="proof">
 		归纳法易证 `"{"[x_n, y_n]"}"` 形成一区间套. 而
 		`y_(n+1) - x_(n+1) = (x_n + y_n)/2 - sqrt(x_n y_n)
 		le (x_n + y_n)/2 - x_n = (y_n - x_n)/2`. 故 `y_n - x_n to 0`.
 		由区间套定理知 `{x_n}` 和 `{y_n}` 趋于同一极限.
-	</p>
+	</div>
 </li>
 
-<li>应用区间套定理证明关于实数分划的戴德金原理.
-	<div class="prove">
+<li>应用区间套定理证明关于实数分划的戴德金原理.<br/>
+	<div class="proof">
 	<p> 设 (A, B) 是实数域的一个戴德金分划, 则
 		`A, B != O/`, `A uu B = RR`, `x lt y`, `AA x in A, AA y in B`.
 		因为 A, B 非空, 可以取 `a_0 in A`, `b_0 in B`, 则 `a_0 lt b_0`.
@@ -216,8 +217,8 @@
 	</div>
 </li>
 
-<li>应用区间套定理证明确界原理.
-	<div class="prove">
+<li>应用区间套定理证明确界原理.<br/>
+	<div class="proof">
 	<p> 只对上确界的情形进行证明. 设 S 是非空有上界 M 的集合,
 		取 `a_0 in S`, `b_0 = M+1`, 则 `a_0 lt b_0`,
 		`[a_0, b_0] nn S != O/`.
@@ -251,8 +252,8 @@
 <li>集合 S 中的全部元素如果可以和全体自然数建立一一对应关系,
 	即排成一个序列, 则称 S 是<b>可数集</b>, 
 	否则称 S 是<b>不可数集</b>. 应用区间套定理证明: 区间 [0, 1] 
-	中的全体实数不可数.
-	<div class="prove">
+	中的全体实数不可数.<br/>
+	<div class="proof">
 	<p> 设 [0, 1] 中的全体实数只有可数个, 记为 `x_1, x_2, cdots`.
 		记 `[a_0, b_0] = [0, 1]`, 将区间三等分, 取两边的两个子区间
 		`[a_0, a_0+1/3]` 和 `[b_0-1/3, b_0]`, 它们中必有一个区间不含
@@ -283,7 +284,7 @@
 		</li>
 	</ol>
 
-	<ol class="prove">
+	<ol class="proof">
 		<li>`x_(n+1) = 1 + 2/3(x_n - 1)`, 故 `|r_(n+1)| = 2/3|x_n-1| =
 			2/3|r_n|`, `x_n to 1`.
 		</li>
@@ -336,7 +337,7 @@
 		`n = 1, 2, cdots`.
 	</li>
 </ol>
-<ol class="prove">
+<ol class="proof">
 	<li>由已知得 `|x_(n+1)-x_n| le lambda^(n-1) |x_2 - x_1| to 0`,
 		所以对任意 `epsi gt 0`, 存在 `N in NN`, 对任意 `n gt N` 有
 		`|x_(n+1)-x_n| lt (1-lambda) epsi`.
@@ -404,7 +405,7 @@
 	</li>
 	</ol>
 
-	<ol class="prove">
+	<ol class="proof">
 	<li>(参考定理 2.5.2)
 		因为 `{x_n}` 不收敛, 由柯西准则知存在 `epsilon_0 gt 0`, 使对
 		任意 `N in NN`, 都存在 `m`, `n gt N` , 使
@@ -426,7 +427,7 @@
 </li>
 
 <li>应用列紧性原理证明单调有界原理.
-	<div class="prove">
+	<div class="proof">
 	<p>
 		不妨设 `{x_n}` 单调递增有上界; 显然 `x_1` 是它的下界, 所以 `{x_n}`
 		有界. 由列紧性原理, 存在 `{x_n}` 的收敛的子数列 `{x_(n_k)}`. 设
@@ -464,7 +465,7 @@
 		其中 x 是任意给定的实数.
 	</li>
 
-	<ol class="prove">
+	<ol class="proof">
 		我们用 Cauchy 收敛准则判定这些数列的收敛性. 在无穷级数一章中,
 		还会更多地接触到这类极限. 设 `p` 是任意正整数. 若能证明
 		<span class="formula">
@@ -493,7 +494,7 @@
 
 <li>应用柯西收敛准则证明单调有界原理.
 	<div>
-	<p class="prove">
+	<p class="proof">
 		不妨设 `{x_n}` 单调递增且有上界 M.
 		反设 `{x_n}` 不收敛, 由柯西准则, 存在 `epsi_0 gt 0`,
 		对任意正整数 `N`, 存在 `m, n gt N`, 使
@@ -520,9 +521,9 @@
 
 </ol>
 
-</body>
+<script src="../js/note.js?type=math"></script>
 
-<script src="../js/main.js"></script>
+</body>
 
 </html>
 

@@ -1,288 +1,72 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-
+<html>
 <head>
-
-<title>zmx0142857 的数学习题册</title>
-<meta charset="utf-8" />
-
-<link rel="stylesheet" type="text/css" href="css/math.css" />
-<script src="js/asciimathml.js"></script>
-<base target="_blank" />
-
+	<meta charset="utf-8">
+	<title>zmx0142857 的数学习题册</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<link href="https://cdn.bootcss.com/ionic/1.3.2/css/ionic.css" rel="stylesheet">
+	<script src="https://cdn.bootcss.com/ionic/1.3.2/js/ionic.bundle.min.js"></script>
 </head>
 
-<body>
+<body ng-app="mathNoteApp" ng-controller="mathNoteCtrl">
 
-<h1>zmx0142857 的数学习题册</h1>
+<ion-side-menus>
 
-<ol class="enum">
+<ion-side-menu-content>
+	<!-- header-bar -->
+	<ion-header-bar class="bar-dark">
+		<button class="button button-icon" ng-click="toggleSideMenu()">
+			<i class="icon ion-navicon"></i>
+		</button>
+		<h1 class="title">{{activeArticle.title}}</h1>
+		<button class="button button-icon" ng-click="menu()">
+			<i class="icon ion-plus"></i>
+		</button>
+	</ion-header-bar>
 
-<li>数学分析
-<ol class="subenum">
-<li>实数域和初等函数
-	<ol>
-		<li><a href="analysis-ex/1-1.html">实数的运算与序</a></li>
-		<li><a href="analysis-ex/1-2.html">实数域的完备性</a></li>
-		<li><a href="analysis-ex/1-3.html">初等函数</a></li>
-	</ol>
-</li>
-<li>数列的极限
-	<ol>
-		<li><a href="analysis-ex/2-1.html">数列极限的定义</a></li>
-		<li><a href="analysis-ex/2-2.html">数列极限的性质</a></li>
-		<li><a href="analysis-ex/2-3.html">趋于无穷的数列和三个记号</a></li>
-		<li><a href="analysis-ex/2-4.html">几个重要的定理</a></li>
-		<li><a href="analysis-ex/2-5.html">上极限和下极限</a></li>
-	</ol>
-</li>
-<li>函数的极限和连续性
-	<ol>
-		<li><a href="analysis-ex/3-1.html">函数的极限</a></li>
-		<li><a href="analysis-ex/3-2.html">函数的极限(续)</a></li>
-		<li><a href="analysis-ex/3-3.html">函数的连续性</a></li>
-		<li><a href="analysis-ex/3-4.html">连续函数的性质</a></li>
-	</ol>
-</li>
-<li>函数的导数
-	<ol>
-		<li><a href="analysis-ex/4-1.html">导数的定义</a></li>
-		<li><a href="analysis-ex/4-2.html">复合函数与反函数的导数</a></li>
-		<li><a href="analysis-ex/4-3.html">函数的微分</a></li>
-		<li><a href="analysis-ex/4-4.html">高阶导数</a></li>
-		<li><a href="analysis-ex/4-5.html">向量函数的导数</a></li>
-	</ol>
-</li>
-<li>导数的应用
-	<ol>
-		<li><a href="analysis-ex/5-1.html">微分中值定理</a></li>
-		<li><a href="analysis-ex/5-2.html">洛必达法则</a></li>
-		<li><a href="analysis-ex/5-3.html">利用导数判定两个函数相等</a></li>
-		<li><a href="analysis-ex/5-4.html">函数的增减性与极值</a></li>
-		<li><a href="analysis-ex/5-5.html">函数的凹凸性</a></li>
-		<li><a href="analysis-ex/5-6.html">泰勒公式</a></li>
-		<li><a href="analysis-ex/5-7.html">方程求根的牛顿迭代公式</a></li>
-		<li><a href="analysis-ex/5-8.html">函数的作图</a></li>
-	</ol>
-</li>
-<li>不定积分
-	<ol>
-		<li><a href="analysis-ex/6-1.html">原函数与不定积分</a></li>
-		<li><a href="analysis-ex/6-2.html">换元积分法和分部积分法</a></li>
-		<li><a href="analysis-ex/6-3.html">几类初等函数的积分</a></li>
-	</ol>
-</li>
-<li>定积分
-	<ol>
-		<li><a href="analysis-ex/7-1.html">定积分的概念和基本性质</a></li>
-		<li><a href="analysis-ex/7-2.html">定积分的计算</a></li>
-		<li><a href="analysis-ex/7-3.html">连续函数的可积性</a></li>
-		<li><a href="analysis-ex/7-4.html">函数可积的达布准则</a></li>
-	</ol>
-</li>
-<li>定积分的应用
-	<ol>
-		<li><a href="analysis-ex/8-1.html">定积分在分析学中的应用</a></li>
-		<li><a href="analysis-ex/8-2.html">定积分在几何学中的应用</a></li>
-		<li><a href="analysis-ex/8-3.html">定积分在物理学中的应用</a></li>
-	</ol>
-</li>
-<li>广义积分
-	<ol>
-		<li><a href="analysis-ex/9-1.html">无穷积分</a></li>
-		<li><a href="analysis-ex/9-2.html">瑕积分</a></li>
-		<li><a href="analysis-ex/9-3.html">一些定积分公式的推广</a></li>
-	</ol>
-</li>
-<li>无穷级数
-	<ol>
-		<li><a href="analysis-ex/10-1.html">无穷级数的基本概念</a></li>
-		<li><a href="analysis-ex/10-2.html">正项级数</a></li>
-		<li><a href="analysis-ex/10-3.html">任意项级数</a></li>
-		<li><a href="analysis-ex/10-4.html">级数的代数运算</a></li>
-		<li><a href="analysis-ex/10-5.html">零测集和勒贝格定理</a></li>
-	</ol>
-</li>
-<li>函数序列和函数级数
-	<ol>
-		<li><a href="analysis-ex/11-1.html">函数序列的一致收敛</a></li>
-		<li><a href="analysis-ex/11-2.html">魏尔斯特拉斯逼近定理和阿尔采拉－阿斯科利定理</a></li>
-		<li><a href="analysis-ex/11-3.html">函数序列的积分平均收敛</a></li>
-		<li><a href="analysis-ex/11-4.html">函数级数</a></li>
-	</ol>
-</li>
-<li>幂级数
-	<ol>
-		<li><a href="analysis-ex/12-1.html">幂级数的收敛区域</a></li>
-		<li><a href="analysis-ex/12-2.html">和函数的性质</a></li>
-		<li><a href="analysis-ex/12-3.html">函数的幂级数展开</a></li>
-	</ol>
-</li>
-<li>傅里叶级数
-	<ol>
-		<li><a href="analysis-ex/13-1.html">函数的傅里叶级数</a></li>
-		<li><a href="analysis-ex/13-2.html">傅里叶级数收敛的条件</a></li>
-		<li><a href="analysis-ex/13-3.html">傅里叶级数的性质</a></li>
-		<li><a href="analysis-ex/13-4.html">傅里叶级数的积分平均收敛</a></li>
-		<li><a href="analysis-ex/13-5.html">有限区间上的傅里叶展开</a></li>
-	</ol>
-</li>
-<li>多元函数的极限和连续性
-	<ol>
-		<li><a href="analysis-ex/14-1.html">`RR^m` 中的点列和点集</a></li>
-		<li><a href="analysis-ex/14-2.html">多元函数的概念</a></li>
-		<li><a href="analysis-ex/14-3.html">多元函数的极限</a></li>
-		<li><a href="analysis-ex/14-4.html">多元连续函数</a></li>
-	</ol>
-</li>
-<li>多元数量函数的微分学
-	<ol>
-		<li><a href="analysis-ex/15-1.html">偏导数和全微分</a></li>
-		<li><a href="analysis-ex/15-2.html">方向导数和梯度</a></li>
-		<li><a href="analysis-ex/15-3.html">复合函数的偏导数和隐函数定理</a></li>
-		<li><a href="analysis-ex/15-4.html">高阶偏导数和泰勒公式</a></li>
-		<li><a href="analysis-ex/15-5.html">微分学的几何应用</a></li>
-	</ol>
-</li>
-<li>多元向量函数的微分学
-	<ol>
-		<li><a href="analysis-ex/16-1.html">线性变换与矩阵分析初步</a></li>
-		<li><a href="analysis-ex/16-2.html">多元向量函数的偏导数与全微分</a></li>
-		<li><a href="analysis-ex/16-3.html">隐函数定理和反函数定理</a></li>
-	</ol>
-</li>
-<li>多元函数的极值
-	<ol>
-		<li><a href="analysis-ex/17-1.html">简单极值问题</a></li>
-		<li><a href="analysis-ex/17-2.html">条件极值问题</a></li>
-	</ol>
-</li>
-<li>含参变量的积分
-	<ol>
-		<li><a href="analysis-ex/18-1.html">含参变量的定积分</a></li>
-		<li><a href="analysis-ex/18-2.html">含参变量的广义积分</a></li>
-		<li><a href="analysis-ex/18-3.html">欧拉积分</a></li>
-	</ol>
-</li>
-<li>重积分
-	<ol>
-		<li><a href="analysis-ex/19-1.html">`RR^m` 中点集的若尔当测度</a></li>
-		<li><a href="analysis-ex/19-2.html">重积分的定义和性质</a></li>
-		<li><a href="analysis-ex/19-3.html">重积分的计算</a></li>
-		<li><a href="analysis-ex/19-4.html">重积分的变元变换</a></li>
-		<li><a href="analysis-ex/19-5.html">曲面的面积</a></li>
-		<li><a href="analysis-ex/19-6.html">重积分的物理应用</a></li>
-	</ol>
-</li>
-<li>曲线积分和曲面积分
-	<ol>
-		<li><a href="analysis-ex/20-1.html">第一型曲线积分和曲面积分</a></li>
-		<li><a href="analysis-ex/20-2.html">第二型曲线积分和曲面积分</a></li>
-		<li><a href="analysis-ex/20-3.html">三个重要公式</a></li>
-	</ol>
-</li>
-<li>广义重积分和含参变量的重积分
-	<ol>
-		<li><a href="analysis-ex/21-1.html">广义重积分和含参变量的重积分</a></li>
-		<li><a href="analysis-ex/21-2.html">函数的磨光及其应用</a></li>
-	</ol>
-</li>
-<li>场论初步
-	<ol>
-		<li><a href="analysis-ex/22-1.html">关于场的基本概念</a></li>
-		<li><a href="analysis-ex/22-2.html">向量场的通量和散度</a></li>
-		<li><a href="analysis-ex/22-3.html">向量场的环量和旋度</a></li>
-		<li><a href="analysis-ex/22-4.html">一些重要定理</a></li>
-		<li><a href="analysis-ex/22-5.html">平面和曲面上的向量场</a></li>
-	</ol>
-</li>
-<li>微分形式和斯托克斯公式
-	<ol>
-		<li><a href="analysis-ex/23-1.html">反对称多线性函数和外积</a></li>
-		<li><a href="analysis-ex/23-2.html">微分形式和外微分</a></li>
-		<li><a href="analysis-ex/23-3.html">微分形式的变元变换和积分</a></li>
-		<li><a href="analysis-ex/23-4.html">斯托克斯公式</a></li>
-	</ol>
-</li>
-<li>综合习题
-	<ol>
-		<li><a href="analysis-ex/final-1.html">综合习题一</a></li>
-		<li><a href="analysis-ex/final-2.html">综合习题二</a></li>
-		<li><a href="analysis-ex/final-3.html">综合习题三</a></li>
-	</ol>
-</li>
-</ol>
-</li>
+	<!-- main article -->
+	<ion-content scrolling="no" style="overflow-y:scroll;-webkit-overflow-scrolling:touch">
+	<iframe id="article-container" style="height:100%;width:100%">
+	</iframe>
+	</ion-content>
+</ion-side-menu-content>
 
-<li>高等代数
-<ol class="enum">
-	<li><a href="algebra-ex/0.html">
-		第0章 整数, 数域与多项式
-	</a></li>
-	<li><a href="algebra-ex/intro1.html">
-		引言1 线性方程组, 消元解法及其在增广矩阵上的实现
-	</a></li>
-	<li><a href="algebra-ex/1.html">
-		第1章 矩阵代数
-	</a></li>
-	<li><a href="algebra-ex/2.html">
-		第2章 一类特殊线性方程组的行列式法则 (Cramer法则)
-	</a></li>
-	<li><a href="algebra-ex/3.html">
-		第3章 线性方程组的一般理论
-	</a></li>
-	<li><a href="algebra-ex/4.html">
-		第4章 线性空间与线性方程组
-	</a></li>
-	<li><a href="algebra-ex/5.html">
-		第5章 对称双线性度量空间与线性方程组
-	</a></li>
-	<li><a href="algebra-ex/intro2.html">
-		引言2 二次型主轴问题的几何原型
-	</a></li>
-	<li><a href="algebra-ex/6.html">
-		第6章 线性空间上的线性变换
-	</a></li>
-	<li><a href="algebra-ex/7.html">
-		第7章 线性空间关于线性变换的一类直和分解
-	</a></li>
-	<li><a href="algebra-ex/8.html">
-		第8章 Euclid 空间上的两类变换与二次型主轴问题
-	</a></li>
-	<li><a href="algebra-ex/9.html">
-		第9章 引申——一般矩阵的 (相似) 标准形
-	</a></li>
-</ol>
-</li>
+<!-- left side menu -->
+<ion-side-menu side="left">
 
-<li>抽象代数
-	<ol>
-		<li><a href="abstract-ex/1.html">集合论的基本概念</a></li>
-		<li><a href="abstract-ex/2.html">抽象代数的基本概念</a></li>
-	</ol>
-</li>
+	<ion-header-bar class="bar-dark">
+		<button class="button button-icon" ng-click="prevArticle()">
+			<i class="icon ion-arrow-left-c"></i>
+		</button>
+		<h1 class="title">目录</h1>
+		<button class="button button-icon" ng-click="nextArticle()">
+			<i class="icon ion-arrow-right-c"></i>
+		</button>
+	</ion-header-bar>
 
-<li>算法导论
-	<ol>
-		<li><a href="algorithm-ex/2.html">算法基础</a></li>
-		<li><a href="algorithm-ex/4.html">分治策略</a></li>
-	</ol>
-</li>
+	<ion-content style="overflow-y:auto">
+	<ion-list>
+		<div ng-repeat="group in groups"
+			ng-click="selectGroup($index)">
+			<div class="item item-divider"
+				style="color: #808080; font-size: 1em">
+				{{group.title}}
+			</div>
+			<ion-list>
+			<ion-item ng-repeat="article in group.articles"
+					ng-click="selectArticle(group, $index)"
+					ng-class="{active:activeArticle == article}">
+				{{article.title}}
+			</ion-item>
+			</ion-list>
+		</div>
+	</ion-list>
+	</ion-content>
+</ion-side-menu>
 
-<li>实变函数
-<ol class="subenum">
-<li>集合与点集
-	<ol>
-		<li><a href="real-ex/1-2.html">集合的运算</a></li>
-		<li><a href="real-ex/1-3.html">映射与基数</a></li>
-		<li><a href="real-ex/1-4.html">`RR^n` 中的度量, 点集的极限点</a></li>
-		<li><a href="real-ex/1-5.html">闭集, 开集, Borel 集, Cantor 集</a></li>
-	</ol>
-</li>
-</ol>
-</li>
+</ion-side-menus>
 
-</ol>
+<script src="js/table-of-contents.js"></script>
+<script src="js/index.js"></script>
+
 </body>
-
 </html>

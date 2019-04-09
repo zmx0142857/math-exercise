@@ -3,19 +3,16 @@
 
 <head>
 
-<title>Chapter 2</title>
+<title>算法基础</title>
 <meta charset="utf-8" />
 
-<link rel="stylesheet" type="text/css" href="../css/math.css" />
-<script src="../js/asciimathml.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/note.css" />
 
 </head>
 
 <body>
 
-<h1>Chapter 2</h1>
-
-<h3>2.1-3</h3>
+2.1-3
 <pre>
 i = 1
 while i &le; n and A[i] &ne; v
@@ -25,7 +22,7 @@ if i == n + 1
 	i = NIL
 </pre>
 
-<h3>2.1-4</h3>
+2.1-4
 <pre>
 // 整数的值为 &Sigma; A[i] * 2<sup>i-1</sup>, 小的 i 表示低位
 carry = 0
@@ -35,7 +32,7 @@ for i = 1 to n
 C[n+1] = carry
 </pre>
 
-<h3>2.2-2</h3>
+2.2-2
 <pre>
 for i = 1 to n-1
 	min = i
@@ -50,19 +47,19 @@ for i = 1 to n-1
 // 以优化算法
 </pre>
 
-<h3>2.3-3</h3>
+2.3-3
 <p> T(2) = 2 = lg(2).
 	若 `T(2^k) = k 2^k`,
 	则 `T(2^(k+1)) = 2k * 2^k + 2^(k+1) = (k+1)2^(k+1)`.
 </p>
 
-<h3>2.3-4</h3>
+2.3-4
 <p>	`T(n) = {
 	(Theta(1) if n = 1),
 	(T(n-1) + Theta(n) if n gt 1)
 :}`</p>
 
-<h3>2.3-5 bi-search</h3>
+2.3-5 bi-search
 <pre>
 // precondition: array A is sorted
 lo = 1
@@ -79,11 +76,12 @@ if lo &gt; hi
 	mid = NIL
 </pre>
 
-<h3>2.3-6</h3>
+2.3-6
 <p>	不能，因为实现新元素的插入需要移动已有元素，那需要 &Theta;(n).</p>
-</body>
 
-<script src="../js/main.js"></script>
+<script src="../js/note.js?type=math"></script>
+
+</body>
 
 </html>
 

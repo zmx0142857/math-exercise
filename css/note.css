@@ -5,9 +5,11 @@
 
 body {
 	font-family: "Microsoft Yahei", Kaiti, Songti, serif, sans-serif;
-	font-size: 14px;
+	font-size: 0.87em;
 	margin: 5%;
 	background: #eeee99; /* yellow */
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 a:link {
@@ -16,12 +18,6 @@ a:link {
 
 a:hover {
 	text-decoration: underline;
-}
-
-img.geo {
-	width: 250px;
-	height: 250px;
-	float: right;
 }
 
 h1 {
@@ -45,23 +41,28 @@ h3 {
 
 h4 {
 	font-weight: bold;
-	font-size: 1em;
+	font-size: 1.1em;
 	margin: 1.8em 0 0.9em 0;
 }
 
 p {
-	margin: 10px 0;
+	margin: 0.8em 0;
 }
 
 pre {
-	font-size: 0.85em;
+	font-size: 0.95em;
 	tab-size: 4;
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
+
+	margin: 0.5em;
+	padding: 0.5em;
+	border-radius: 0.5em;
+	background: rgba(0,0,0,0.2);
 }
 
 math {
-	font-family: "Latin Modern Math";
+	/*font-family: "Latin Modern Math";*/
 	font-size: 1.2em;
 }
 
@@ -70,24 +71,39 @@ math {
 	width: 100%;
 	text-align: center;
 	line-height: 2em;
-	margin: 15px;
+	margin: 1em 0;
 }
 
 .center {
 	text-align: center;
 }
 
-.note {
+.remark {
 	padding: 0.5em;
 	border-radius: 0.5em;
 	background: rgba(0,0,0,0.2);
 }
 
-.prove, .solve, .answer {
+.proof, .solution, .answer {
 	padding: 0.5em;
 	border-radius: 0 0.5em 0.5em 0.5em;
 	background: rgba(0,0,0,0.2);
 	margin-top: 0;
+}
+
+button.copy-code {
+	position: absolute;
+	right: 5%;
+	font-size: 1em;
+	padding: 0.2em 1.4em;
+	border: none;
+	color: black;
+	background: rgba(0, 0, 0, 0);
+	cursor: pointer;
+}
+
+button.copy-code:hover {
+	text-decoration: underline;
 }
 
 button.toggle-show-answer {
@@ -101,44 +117,64 @@ button.toggle-show-answer {
 	margin-bottom: 0;
 }
 
+button.toggle-show-answer:hover {
+	cursor: pointer;
+}
+
+div.graph {
+	height: 25em;
+	text-align: center;
+	font-size: 0.9em;
+}
+
+div.graph img {
+	height: 90%;
+	display: block;
+	margin: 0 auto;
+}
+
+div.graph span {
+	float: bottom;
+}
+
 span.box {
 	display: inline-block;
-	padding: 5px;
-	border-radius: 5px;
+	padding: 0.5em;
+	border-radius: 0.5em;
 	background: rgba(0,0,0,0.2);
 }
 
 /* use this to number your formula */
 span.label {
-	position: absolute;
-	padding-right: 0.3em;
-	right: 5%;
+	display: table-cell;
+	text-align: right;
+}
+
+/* ... and this to force align */
+span.label-phantom {
+	display: table-cell;
+	text-align: right;
+	opacity: 0;
 }
 
 span.right {
 	float: right;
 }
 
-ol, ul {
-	margin: 0.4em 0;
+span.transparent {
+	color: rgba(0, 0, 0, 0);
 }
 
-ol li {
-	margin: 0.3em 1em;
+ol, ul {
+	margin: 0.8em 0;
+}
+
+ol li, ul li {
+	margin: 0.3em 1.5em;
 }
 
 ol ol li {
-	margin: 0.3em 1.2em;
-}
-
-/*
-ol.enum ol li {
-	display: inline-block;
-}
-*/
-
-ul li {
-	margin: 7px 20px;
+	margin: 0.3em 1em;
 }
 
 /* ol style (1) (2) (3)... */
@@ -155,7 +191,7 @@ ol.enum ol > li:before {
 	content: "(" counter(enum_cnt) ") ";
 }
 
-/* ol style a. b. c. */
+/* ol style i ii iii */
 ol.subenum ol {
 	counter-reset: subenum_cnt;
 }
@@ -168,37 +204,59 @@ ol.subenum ol > li:before {
 	content: "(" counter(subenum_cnt, lower-roman) ") ";
 }
 
+/*
+ol.enum ol li {
+	display: inline-block;
+}
+*/
+
+dl dt {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+dl dd {
+	margin-bottom: 0.3em;
+	margin-left: 2em;
+}
+
 /* multi-columns */
-.col2 li {
-	width: 45%;
+.col2 li,.col2 div {
+	width: 43%;
 	display: inline-block;
 }
 
-.col3 li {
-	width: 30%;
+.col3 li,.col3 div {
+	width: 27%;
 	display: inline-block;
 }
 
-.col4 li {
-	width: 21%;
+.col4 li,.col4 div {
+	width: 18%;
 	display: inline-block;
 }
 
-.col5 li {
-	width: 16%;
+.col5 li,.col5 div {
+	width: 14%;
 	display: inline-block;
 }
 
 table {
-	margin: 20px auto;
+	margin: 2em auto;
 	border-top: 2px solid;
 	border-bottom: 2px solid;
 }
 
 td, th {
-	padding: 5px 8px 5px 8px;
+	padding: 0.45em 0.75em 0.45em 0.75em;
 }
 
+#last-modified {
+	text-align: right;
+	color: #999;
+}
+
+/*
 #nav {
 	position: fixed;
 	top: 0;
@@ -215,15 +273,19 @@ td, th {
 	font-size: 28px;
 	font-weight: bold;
 	color: white;
+	cursor: pointer;
 }
 
-#prev {
-	float: left;
+#toc {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 300px;
+	height: 100%;
+	border: none;
+	box-shadow: 0 0 10px 0.2rem black;
 }
-
-#next {
-	float: right;
-}
+*/
 
 /* on printer... */
 @media print {
@@ -231,7 +293,7 @@ td, th {
 		margin: 0;
 		font-size: 10pt;
 		font-family: SimSun, Songti, STIXGeneral, times, serif;
-		background: rgb(255,255,255);
+		background: white;
 	}
 
 	h1, h2, h3, h4, h5, h6, b {
@@ -239,13 +301,19 @@ td, th {
 		font-weight: bold;
 	}
 
-	/*.note {
+	a {
+		color: black;
+	}
+
+	/*.remark {
 		font-family: fang-song, Kaiti;
 	}  open A10 and you got a problem...*/
 
+	/*
 	#nav {
 		display: none;
 	}
+	*/
 
 	.toggle-show-answer {
 		display: none;
@@ -257,7 +325,8 @@ td, th {
 }
 
 /* on your mobile phone... */
-@media screen and (min-height: 800px) {
+@media screen and (min-resolution: 150dpi) {
+	/*
 	#nav {
 		height: 64px;
 	}
@@ -267,9 +336,51 @@ td, th {
 		font-size: 52px;
 	}
 
+	#toc {
+		width: 600px;
+	}
+	*/
+
 	body {
-		font-size: 28px;
+		font-size: 0.8em;
 		background: #eeeedd; /* lighter yellow */
+	}
+
+	math {
+		font-size: 1em;
+	}
+
+	div.graph {
+		height: 15em;
 	}
 }
 
+.MathJax {
+	/* enable auto linebreak for span.formula */
+	display: inline-block !important;
+}
+
+/* svg */
+svg {
+	stroke: black;
+	fill: none;
+	width: 100%;
+}
+
+svg text {
+	stroke: none;
+	fill: black;
+}
+
+svg path.arrow {
+	marker-end: url(#arrow-end);
+}
+
+svg path.double-arrow {
+	marker-start: url(#arrow-start);
+	marker-end: url(#arrow-end);
+}
+
+svg path.dashed {
+	stroke-dasharray: 5, 5;
+}
