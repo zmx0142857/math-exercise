@@ -1,3 +1,4 @@
+document.title = 'zmx0142857 的数学习题册';
 var domain = '.mathExercise.io.github.zmx0142857';
 var tableOfContents = [ {
 	title:'高等代数',

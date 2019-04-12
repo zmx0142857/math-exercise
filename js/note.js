@@ -4,6 +4,7 @@
 
 // ---- globals ----
 
+var explorer = navigator.userAgent;
 var url;		// 'A2', '%234', '3-1'
 var filename;	// 'A2', '#4',   '3-1'	// replace leading '%23' with '#'
 var abbr;		// 'A',  '#',    '3-'
@@ -45,7 +46,6 @@ function init() {
 }
 
 function loadMath() {
-	var explorer = window.navigator.userAgent;
 	var foundFirefox = explorer.indexOf('Firefox') >= 0;
 	var foundChrome = explorer.indexOf('Chrome') >= 0;
 	var foundSafari = explorer.indexOf('Safari') >= 0;
@@ -358,6 +358,38 @@ function makeSvg() {
 	}
 }
 
+function wrapIOS() {
+	if (/iphone|ipad|ipod/i.test(explorer)) {
+		// move everything into wrapper
+		var wrapper = document.createElement('div');
+		wrapper.id = 'ios-wrapper';
+		var node;
+		while (node = document.body.firstChild) {
+			wrapper.appendChild(node);
+		}
+		document.body.appendChild(wrapper);
+	}
+}
+
+function toggleHideHeader() {
+	var prevScrollTop = document.documentElement.scrollTop
+		|| document.body.scrollTop;
+	var threshod = 100;
+	var prevHide = false;
+	var button = parent.document.getElementById('toggle-show-header');
+	if (parent != window) {
+		document.body.onscroll = function() {
+			var scrollTop = document.documentElement.scrollTop
+				|| document.body.scrollTop;
+			var hide = (scrollTop >= prevScrollTop);
+			if (hide != prevHide)
+				button.onclick(hide);
+			prevScrollTop = scrollTop;
+			prevHide = hide;
+		};
+	}
+}
+
 // ---- data & function call ----
 
 var args = getQuery();
@@ -367,6 +399,7 @@ init();
 //makeNav();
 makeModified();
 makeH1();		// call makeH1() before decorate()
+
 decorateHeading();
 makeSvg();
 
@@ -420,5 +453,8 @@ if (args.type == 'math') {
 }
 
 makeReference(); // call makeReference() after decorate()
+wrapIOS(); // call this after decorate()
+toggleHideHeader();
 
 })();
+

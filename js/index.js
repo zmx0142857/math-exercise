@@ -1,4 +1,4 @@
-angular.module('mathNoteApp', ['ionic'])
+angular.module('noteApp', ['ionic'])
 
 // The articles factory handles saving and loading last active
 // group/article index.
@@ -26,8 +26,9 @@ angular.module('mathNoteApp', ['ionic'])
 	};
 })
 
-.controller('mathNoteCtrl', function($scope, $timeout, $ionicModal,
-			Factory, $ionicSideMenuDelegate, $ionicActionSheet) {
+.controller('noteCtrl', function($scope, $timeout, $ionicModal,
+			Factory, $ionicSideMenuDelegate, $ionicActionSheet,
+			$rootScope) {
 
 	// uncomment to clear caches
 	//localStorage.clear();
@@ -57,6 +58,7 @@ angular.module('mathNoteApp', ['ionic'])
 			Factory.setArticleIndex(index);
 			$scope.doc.src = article.src;
 			$ionicSideMenuDelegate.toggleLeft(false);
+			$rootScope.isHeaderHidden = false;
 		} else {
 			console.warn('$scope.selectArticle: invalid index.');
 		}
@@ -114,6 +116,12 @@ angular.module('mathNoteApp', ['ionic'])
 			}
 		});
 		$timeout(function() { hideSheet(); }, 5000);
+	};
+
+	var button = document.getElementById('toggle-show-header');
+	button.onclick = function(hide) {
+		$rootScope.isHeaderHidden = hide;
+		$rootScope.$apply();
 	};
 
 });
